@@ -42,7 +42,41 @@ const CreateInstructor = () => {
         })
     
     }
-     
+
+    const onInputChange = (e) => {
+
+        const {name, value} = e.target;
+
+        yup.reach(formSchema, name)
+            .validate(value)
+            .then(() =>
+                setErrors({...errors, [name]: err.errors[0]})
+                )
+            setInstValues({...instValues, [name]: value})
+    }
+
+    const onCheckboxChange = (e) => {
+        const {name, checked} = e.target;
+
+        yup
+            .reach(formSchema, name)
+            .validate(checked)
+            .then(() => {
+                setErrors({...errors, [name]: err.errors[0]})
+            })
+        setInstValues({...setInstValues, [name]: value})
+    }
+
+    const onSubmit = (e) => {
+        e.preventDefault()
+
+        const newInstructor = {
+
+        }
+
+        postInst = {}
+    }
+
     return (
 
         <Form>

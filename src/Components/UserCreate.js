@@ -11,7 +11,7 @@ const initialUserValues = {
 const initialUser = [];
 const initialDisabled = true;
 
-const CreateUser = () => {
+const UserCreate = () => {
 
     const [user, newUser] = useState(initialUser);
     const [userValues, setUserValues] = useState(initialUserValues);
@@ -36,11 +36,13 @@ const CreateUser = () => {
     
     }
 
-const UserCreate = () => {
-
     return (
 
         <Log>
+
+            <h1>Welcome to Anywhere Fitness!</h1>
+            <p>Please fill out the form below to join.</p>
+
             <label htmlFor='fName'>
                 First Name :
             </label>
