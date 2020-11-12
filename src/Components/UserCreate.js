@@ -1,5 +1,41 @@
 import React from 'react';
 
+const initialUserValues = {
+
+    name: '',
+    email: '',
+    pswd1: '',
+
+}
+
+const initialUser = [];
+const initialDisabled = true;
+
+const CreateUser = () => {
+
+    const [user, newUser] = useState(initialUser);
+    const [userValues, setUserValues] = useState(initialUserValues);
+    const [errors, setErrors] = useState(initialUserValues);
+    const [disabled, setDisabled] = useState(initialDisabled);
+
+    const postUser = (newUser) => {
+
+        Axios.post('', newUser)
+
+        .then((res) => {
+            newInstructor([res.data, ...user])
+        })
+
+        .catch((err) => {
+            alert('Are you sure you are an instructor?', err)
+        })
+
+        .finally(() => {
+            setInstValues(initialUserValues)
+        })
+    
+    }
+
 const UserCreate = () => {
 
     return (

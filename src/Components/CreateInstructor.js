@@ -1,7 +1,48 @@
-import React from 'react';
+import Axios from 'axios';
+import React, { useState } from 'react';
+
+const initialInstValues = {
+
+    name: '',
+    email: '',
+    pswd1: '',
+    activity: '',
+    time: '',
+    duration: '',
+    intensity: '',
+    loc: '',
+    NoU: '',
+    maxSize: '',
+}
+
+const initialInst = [];
+const initialDisabled = true;
 
 const CreateInstructor = () => {
 
+    const [instructor, newInstructor] = useState(initialInst);
+    const [instValues, setInstValues] = useState(initialInstValues);
+    const [errors, setErrors] = useState(initialInstValues);
+    const [disabled, setDisabled] = useState(initialDisabled);
+
+    const postInst = (newInst) => {
+
+        Axios.post('', newInst)
+
+        .then((res) => {
+            newInstructor([res.data, ...instructor])
+        })
+
+        .catch((err) => {
+            alert('Are you sure you are an instructor?', err)
+        })
+
+        .finally(() => {
+            setInstValues(initialInstValues)
+        })
+    
+    }
+     
     return (
 
         <Form>
