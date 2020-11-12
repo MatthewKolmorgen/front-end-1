@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Create = () => {
+const UserCreate = () => {
 
     return (
 
@@ -66,4 +66,4 @@ const Create = () => {
 
 }
 
-export default Create
+export default UserCreate

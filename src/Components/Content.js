@@ -1,7 +1,7 @@
 import react from 'react';
 import HeadContent from './HeadContent';
 import MainContent from './MainContent';
-import Login from './Login';
+import Login from './login';
 
 const Content = () => {
 

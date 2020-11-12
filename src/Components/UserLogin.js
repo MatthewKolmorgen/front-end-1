@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Login = () => {
+const UserLogin = () => {
 
     return (
 
         <Enter>
             <Form>
+
                 <label htmlFor='email'>
                     <input
                         id='email'
@@ -19,14 +20,15 @@ const Login = () => {
                     <input
                         id='pswd1'
                         name='pswd1'
-                        type='pswd1'
-                        value={values.email}
+                        type='password'
+                        value={values.pswd1}
                         onChange={onInputChange}
                          />
                 </label>
+                
             </Form>
         </Enter>
     )
 }
 
-export default Login
+export default UserLogin
