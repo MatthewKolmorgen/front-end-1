@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 
 const initialInstValues = {
 
-    name: '',
-    email: '',
-    pswd1: '',
+    instfname: '',
+    instlname: '',
+    instemail: '',
+    instpswd1: '',
     activity: '',
     time: '',
     duration: '',
@@ -46,36 +47,59 @@ const CreateInstructor = () => {
     const onInputChange = (e) => {
 
         const {name, value} = e.target;
-
+  
         yup.reach(formSchema, name)
-            .validate(value)
-            .then(() =>
-                setErrors({...errors, [name]: err.errors[0]})
-                )
-            setInstValues({...instValues, [name]: value})
-    }
-
-    const onCheckboxChange = (e) => {
+        .validate(value)
+        .then(() => {
+          setErrors({...errors, [name]: ''})
+        })
+        .catch((err) => {
+          setErrors({...errors, [name]: err.errors[0]})
+        })
+      setInstValues({...instValues, [name]: value})
+      }      
+  
+      const onCheckboxChange = (e) => {
         const {name, checked} = e.target;
-
+    
         yup
-            .reach(formSchema, name)
-            .validate(checked)
-            .then(() => {
-                setErrors({...errors, [name]: err.errors[0]})
-            })
-        setInstValues({...setInstValues, [name]: value})
-    }
-
-    const onSubmit = (e) => {
+          .reach(formSchema, name)
+          .validate(checked)
+          .then(() => {
+            setErrors({...errors,[name]: ''})
+          })
+          .catch((err) => {
+            setErrors({...errors,[name]:err.errors[0]})
+          })
+  
+          setInstValues({...instValues,[name]:checked})
+      }
+  
+      const onSubmit = (e) => {
         e.preventDefault()
-
-        const newInstructor = {
-
+    
+        const newInst = {
+            instfname: instValues.instfname.trim(),
+            instlname: instValues.instlname.trim(),
+            instemail: instValues.instemail.trim(),
+            instpswd1: instValues.instpswd1.trim(),
+          activity: instValues.activity.trim(),
+          time: instValues.time.trim(),
+          duration: instValues.duration.trim(),
+          intensity: instValues.intensity.trim(),
+          loc: instValues.loc.trim(),
+          NoU: instValues.NoU.trim(),
+          maxSize: instValues.maxSize.trim(),
         }
-
-        postInst = {}
-    }
+    
+        postInst(newInst);
+      }
+    
+      useEffect(() => {
+        formSchema.isValid(instValues).then(valid => {
+          setDisabled(!valid);
+        })
+      }, [instValues])
 
     return (
 
@@ -84,25 +108,35 @@ const CreateInstructor = () => {
             <h1>Welcome to Anywhere Fitness!</h1>
             <p>Please fill out the form below to register as a new instructor</p>
 
-            <label htmlFor='name'>
+            <label htmlFor='instfname'>
                 Please enter your full name:
                 <input 
-                    id='name' 
-                    name='name' 
+                    id='instfname' 
+                    name='instfname' 
                     type='text' 
                     value={value.name} 
                     onChange={onInputChange}
                  />
             </label>
-            <label htmlFor='inst-email'>
+            <label htmlFor='instlname'>
+                Please enter your full name:
+                <input 
+                    id='instlname' 
+                    name='instlname' 
+                    type='text' 
+                    value={value.name} 
+                    onChange={onInputChange}
+                 />
+            </label>
+            <label htmlFor='instemail'>
                 E-mail:
             </label>
             <input
-                id='inst-email'
-                name='inst-email'
+                id='instemail'
+                name='instemail'
                 type='email'
                 placeholder='Please enter your e-mail address.'
-                value={values.inst-email}
+                value={values.instemail}
                 onChange={onChangeInput}
                  />
             <label htmlFor='inst-pswd1'>

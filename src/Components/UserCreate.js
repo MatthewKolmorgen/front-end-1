@@ -2,9 +2,9 @@ import React from 'react';
 
 const initialUserValues = {
 
-    name: '',
-    email: '',
-    pswd1: '',
+    username: '',
+    useremail: '',
+    userpswd1: '',
 
 }
 
@@ -27,7 +27,7 @@ const UserCreate = () => {
         })
 
         .catch((err) => {
-            alert('Are you sure you are an instructor?', err)
+            alert('There was an error while becoming a memember.', err)
         })
 
         .finally(() => {
@@ -36,6 +36,55 @@ const UserCreate = () => {
     
     }
 
+    const onInputChange = (e) => {
+
+        const {name, value} = e.target;
+  
+        yup.reach(formSchema, name)
+        .validate(value)
+        .then(() => {
+          setErrors({...errors, [name]: ''})
+        })
+        .catch((err) => {
+          setErrors({...errors, [name]: err.errors[0]})
+        })
+      setUserValues({...userValues, [name]: value})
+      }      
+  
+      const onCheckboxChange = (e) => {
+        const {name, checked} = e.target;
+    
+        yup
+          .reach(formSchema, name)
+          .validate(checked)
+          .then(() => {
+            setErrors({...errors,[name]: ''})
+          })
+          .catch((err) => {
+            setErrors({...errors,[name]:err.errors[0]})
+          })
+  
+        setUserValues({...userValues,[name]:checked})
+      }
+  
+      const onSubmit = (e) => {
+        e.preventDefault()
+    
+        const newUser = {
+            username: userValues.username.trim(),
+            useremail: userValues.useremail.trim(),
+            userpswd1: userValues.userpswd1.trim(),
+        }
+    
+        postUser(newUser);
+      }
+    
+      useEffect(() => {
+        formSchema.isValid(userValues).then(valid => {
+          setDisabled(!valid);
+        })
+      }, [userValues])
+
     return (
 
         <Log>
@@ -43,57 +92,57 @@ const UserCreate = () => {
             <h1>Welcome to Anywhere Fitness!</h1>
             <p>Please fill out the form below to join.</p>
 
-            <label htmlFor='fName'>
+            <label htmlFor='userfname'>
                 First Name :
             </label>
             <input 
-                id='fname'
-                name='fname'
+                id='userfname'
+                name='userfname'
                 type='text'
                 placeholder='Please enter your first name.'
-                value={values.fname}
+                value={values.userfname}
                 onChange={onInputChange}
                  />
-            <label htmlFor='lName'>
+            <label htmlFor='userlName'>
                 Last Name:
             </label>
             <input
-                id='lname'
-                name='lname'
+                id='userlName'
+                name='userlName'
                 type='text'
                 placeholder='Please enter your last name.'
-                value={values.lname}
+                value={values.userlname}
                 onChange={onInputChange}
                  />
-            <label htmlFor='email'>
+            <label htmlFor='useremail'>
                 E-mail:
             </label>
             <input
-                id='email'
-                name='email'
+                id='useremail'
+                name='useremail'
                 type='email'
                 placeholder='Please enter your e-mail address.'
-                value={values.email}
+                value={values.useremail}
                 onChange={onChangeInput}
                  />
-            <label htmlFor='Pswd1'>
+            <label htmlFor='userpswd1'>
                 Password:
             </label>
             <input
-                id='pswd1'
-                name='pswd1'
+                id='userpswd1'
+                name='userpswd1'
                 type='password'
                 placeholder='******'
                 minLength='6'
-                value={values.pswd1}
+                value={values.userpswd1}
                 onChange={onInputChange}
                  />
-            <label htmlFor='Pswd2'>
+            <label htmlFor='userpswd2'>
                 Confirm Password:
             </label>
             <input
-                id='pswd2'
-                name='pswd2'
+                id='userpswd2'
+                name='userpswd2'
                 type='password'
                 placeholder='******'
                 minLength='6'

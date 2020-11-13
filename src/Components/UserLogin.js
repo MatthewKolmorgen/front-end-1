@@ -8,21 +8,21 @@ const UserLogin = () => {
         <Enter>
             <Form>
 
-                <label htmlFor='email'>
+                <label htmlFor='useremail'>
                     <input
-                        id='email'
-                        name='email'
+                        id='useremail'
+                        name='useremail'
                         type='email'
-                        value={values.email}
+                        value={values.useremail}
                         onChange={onInputChange}
                          />
                 </label>
-                <label htmlFor='pswd1'>
+                <label htmlFor='userpswd1'>
                     <input
-                        id='pswd1'
-                        name='pswd1'
+                        id='userpswd1'
+                        name='userpswd1'
                         type='password'
-                        value={values.pswd1}
+                        value={values.userpswd1}
                         onChange={onInputChange}
                          />
                 </label>
