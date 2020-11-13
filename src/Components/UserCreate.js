@@ -147,6 +147,7 @@ const UserCreate = () => {
                 placeholder='******'
                 minLength='6'
                  />
+            <button>Submit Form</button>
         </Log>
 
     )

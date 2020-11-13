@@ -9,17 +9,19 @@ const LoginInstructor = () => {
             <label>
                 E-mail address
                 <input 
-                    id='inst-email' 
-                    name='inst-email'
+                    id='instemail' 
+                    name='instemail'
                  />
             </label>
             <label>
                 Password:
                 <input 
-                    id='inst-pswd'
-                    name='inst-pswd'
+                    id='instpswd'
+                    name='instpswd'
                  />
             </label>
+            <button>Login</button>
+            
         </Form>
     )
 }
