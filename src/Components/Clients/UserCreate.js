@@ -148,6 +148,7 @@ const UserCreate = () => {
                 minLength='6'
                  />
             <button>Submit Form</button>
+            <p>Already a member?<button>Login</button></p>
         </Log>
 
     )

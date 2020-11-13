@@ -1,4 +1,6 @@
 import React from 'react';
+import HeadContent from './HeadContent';
+import FootNav from './FootNav';
 
 const MainContent = () => {
 
@@ -6,6 +8,7 @@ const MainContent = () => {
 
         <div id="main">
 
+			<HeadContent />
 			<section id="one">
 				<div class="inner">
 					<header class="major">
@@ -79,6 +82,7 @@ const MainContent = () => {
 				</ul>
 			</div>
 		</section>
+		<FootNav />
 
 	</div>
 

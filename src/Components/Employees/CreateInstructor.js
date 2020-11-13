@@ -83,13 +83,13 @@ const CreateInstructor = () => {
             instlname: instValues.instlname.trim(),
             instemail: instValues.instemail.trim(),
             instpswd1: instValues.instpswd1.trim(),
-          activity: instValues.activity.trim(),
-          time: instValues.time.trim(),
-          duration: instValues.duration.trim(),
-          intensity: instValues.intensity.trim(),
-          loc: instValues.loc.trim(),
-          NoU: instValues.NoU.trim(),
-          maxSize: instValues.maxSize.trim(),
+            activity: instValues.activity.trim(),
+              time: instValues.time.trim(),
+              duration: instValues.duration.trim(),
+              intensity: instValues.intensity.trim(),
+              loc: instValues.loc.trim(),
+              NoU: instValues.NoU.trim(),
+              maxSize: instValues.maxSize.trim(),
         }
     
         postInst(newInst);
@@ -109,22 +109,22 @@ const CreateInstructor = () => {
             <p>Please fill out the form below to register as a new instructor</p>
 
             <label htmlFor='instfname'>
-                Please enter your full name:
+                Please enter your first name:
                 <input 
                     id='instfname' 
                     name='instfname' 
                     type='text' 
-                    value={value.name} 
+                    value={value.instfname} 
                     onChange={onInputChange}
                  />
             </label>
             <label htmlFor='instlname'>
-                Please enter your full name:
+                Please enter your last name:
                 <input 
                     id='instlname' 
                     name='instlname' 
                     type='text' 
-                    value={value.name} 
+                    value={value.instlname} 
                     onChange={onInputChange}
                  />
             </label>
@@ -139,24 +139,24 @@ const CreateInstructor = () => {
                 value={values.instemail}
                 onChange={onChangeInput}
                  />
-            <label htmlFor='inst-pswd1'>
+            <label htmlFor='instpswd1'>
                 Password:
             </label>
             <input
-                id='inst-pswd1'
-                name='inst-pswd1'
+                id='instpswd1'
+                name='instpswd1'
                 type='password'
                 placeholder='******'
                 minLength='6'
-                value={values.inst-pswd1}
+                value={values.instpswd1}
                 onChange={onInputChange}
                  />
-            <label htmlFor='inst-pswd2'>
+            <label htmlFor='instpswd2'>
                 Confirm Password:
             </label>
             <input
-                id='inst-pswd2'
-                name='inst-pswd2'
+                id='instpswd2'
+                name='instpswd2'
                 type='password'
                 placeholder='******'
                 minLength='6'
@@ -231,6 +231,7 @@ const CreateInstructor = () => {
                  />
             </label>
             <button>Submit Form</button>
+            <p>Already a registered instructor?<button>Login</button></p>
 
         </Form>
 

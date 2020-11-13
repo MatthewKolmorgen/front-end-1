@@ -21,6 +21,7 @@ const LoginInstructor = () => {
                  />
             </label>
             <button>Login</button>
+            <p>Do you need to register as an instructor?<button>Create Account</button></p>
             
         </Form>
     )
