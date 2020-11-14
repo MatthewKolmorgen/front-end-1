@@ -1,18 +1,20 @@
-import Axios from 'axios';
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 
 const formSchema = yup.object().shape({
 
-    fname: yup.string().required("Please enter your first name."),
+    instfname: yup.string().required("Please enter your first name."),
 
-    lname: yup.string().required("Please enter your last name."),
+    instlname: yup.string().required("Please enter your last name."),
 
-    email: yup.string().email("Must enter a valid email address.").required("An e-mail address is required."),
+    instemail: yup.string().email("Must enter a valid email address.").required("An e-mail address is required."),
 
-    Pswd1: yup.string().min(6, 'Passwords must be at least 6 chatracters long.').required("Please enter a password."),
+    instpswd1: yup.string().min(6, 'Passwords must be at least 6 chatracters long.').required("Please enter a password."),
 
-    Pswd2: yup.string().equals({Pswd1}).required('Re-enter password.')
+    instpswd2: yup.string().required('Re-enter password.').test('passwords-match', 'Passwords must match.', function(value) {
+        return this.parent.password === value.instpswd1;
+      }),
 
 });
 
@@ -37,7 +39,7 @@ const CreateInstructor = () => {
 
     const postInst = (newInst) => {
 
-        Axios.post('', newInst)
+        axios.post('https://reqres.in/api/instructor', newInst)
 
         .then((res) => {
             newInstructor([res.data, ...instructor])

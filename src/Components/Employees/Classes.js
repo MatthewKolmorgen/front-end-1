@@ -1,5 +1,24 @@
-import Axios from 'axios';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import * as yup from 'yup';
+
+const formSchema = yup.object().shape({
+
+    activity: yup.string().required("Please enter the name of the activity for this class."),
+  
+    time: yup.string().required("Please enter the date and time for the activity."),
+  
+    duration: yup.string().required("Please make sure the time is in minutes."),
+  
+    intensity: yup.string().required("Please enter the level of intensity."),
+  
+    loc: yup.string().required("Please enter a location."),
+
+    NoU: yup.string().required("Please enter a password."),
+
+    maxSize: yup.string().required("The maximum size of your class."),
+      
+  });
 
 const initialClassValues = {
 
@@ -24,7 +43,7 @@ const Classes = () => {
 
     const postClass = (newClass) => {
 
-        Axios.post('', newPost)
+        axios.post('https://reqres.in/api/classes', newClass)
 
         .then((res) => {
             newClass([res.data, ...classes])

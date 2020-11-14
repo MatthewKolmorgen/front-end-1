@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import * as yup from 'yup';
 
 const initialUserValues = {
 
@@ -37,10 +39,10 @@ const UserCreate = () => {
 
     const postUser = (newUser) => {
 
-        Axios.post('https://reqres.in/api/user', newUser)
+        axios.post('https://reqres.in/api/user', newUser)
 
         .then((res) => {
-            newInstructor([res.data, ...user])
+            newUser([res.data, ...user])
         })
 
         .catch((err) => {
