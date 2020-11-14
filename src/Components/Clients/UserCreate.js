@@ -12,6 +12,22 @@ const initialUserValues = {
 const initialUser = [];
 const initialDisabled = true;
 
+const formSchema = yup.object().shape({
+
+  userfname: yup.string().required("Please enter your first name."),
+
+  userlname: yup.string().required("Please enter your last name."),
+
+  useremail: yup.string().email("Must enter a valid email address.").required("An e-mail address is required."),
+
+  userpswd1: yup.string().min(6, 'Passwords must be at least 6 chatracters long.').required("Please enter a password."),
+
+  userpswd2: yup.string().required('Re-enter password.').test('passwords-match', 'Passwords must match.', function(value) {
+      return this.parent.password === value.userpswd1;
+    }),
+
+});
+
 const UserCreate = () => {
 
     const [user, newUser] = useState(initialUser);
@@ -21,7 +37,7 @@ const UserCreate = () => {
 
     const postUser = (newUser) => {
 
-        Axios.post('', newUser)
+        Axios.post('https://reqres.in/api/user', newUser)
 
         .then((res) => {
             newInstructor([res.data, ...user])

@@ -1,10 +1,26 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import * as yup from 'yup';
+
+const formSchema = yup.object().shape({
+
+    fname: yup.string().required("Please enter your first name."),
+
+    lname: yup.string().required("Please enter your last name."),
+
+    email: yup.string().email("Must enter a valid email address.").required("An e-mail address is required."),
+
+    Pswd1: yup.string().min(6, 'Passwords must be at least 6 chatracters long.').required("Please enter a password."),
+
+    Pswd2: yup.string().equals({Pswd1}).required('Re-enter password.')
+
+});
 
 const initialInstValues = {
 
     instfname: '',
     instlname: '',
+    instAuth: '',
     instemail: '',
     instpswd1: '',
 }
@@ -58,6 +74,7 @@ const CreateInstructor = () => {
         const newInst = {
             instfname: instValues.instfname.trim(),
             instlname: instValues.instlname.trim(),
+            instAuth: instValues.instAuth.trim(),
             instemail: instValues.instemail.trim(),
             instpswd1: instValues.instpswd1.trim(),
         }
@@ -98,6 +115,16 @@ const CreateInstructor = () => {
                     value={value.instlname} 
                     onChange={onInputChange}
                  />
+            </label>
+            <label htmlFor='instAuth'>
+                Please enter the authorization code provided to you by administration:
+                <input
+                    id='instAuth' 
+                    name='instAuth' 
+                    type='text' 
+                    value={value.instAuth}
+                    onChange={onInputChange} 
+                />
             </label>
             <label htmlFor='instemail'>
                 E-mail:
