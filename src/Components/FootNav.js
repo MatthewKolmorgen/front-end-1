@@ -4,9 +4,9 @@ const FootNav = () => {
 
     return (
 
-        <Nav>
+        <div>
 
-        </Nav>
+        </div>
     )
 
 }

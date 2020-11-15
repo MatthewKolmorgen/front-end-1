@@ -93,7 +93,7 @@ const CreateInstructor = () => {
 
     return (
 
-        <Form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
 
             <h1>Welcome to Anywhere Fitness!</h1>
             <p>Please fill out the form below to register as a new instructor</p>
@@ -165,7 +165,7 @@ const CreateInstructor = () => {
             <button>Submit Form</button>
             <p>Already a registered instructor?<button>Login</button></p>
 
-        </Form>
+        </form>
 
 
     )

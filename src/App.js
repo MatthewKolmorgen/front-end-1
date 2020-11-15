@@ -1,5 +1,8 @@
 import React from 'react';
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
+import MainContent from './Components/MainContent';
+import UserLogin from './Components/Clients/UserLogin';
+import LoginInstructor from './Components/Employees/LoginInstructor';
 
 function App() {
 
@@ -9,12 +12,17 @@ function App() {
       <Link to='/'>
         <MainContent />
       </Link>
-      <Link to='/instructor'>
-        <Instructor />
-      </Link>
-      <Link to='/member'>
-        <Members />
-      </Link>
+      <Switch>
+        <Link to='/login'>
+          <LoginInstructor />
+        </Link>
+      </Switch>
+      <Switch>
+        <Link to='/login'>
+          <UserLogin />
+        </Link>
+      </Switch>
+
     </div>
   );
 }

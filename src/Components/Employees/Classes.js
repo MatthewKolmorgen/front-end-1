@@ -114,7 +114,7 @@ const Classes = () => {
 
     return (
 
-        <Form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
 
             <label htmlFor='activity'>
                 What type of activities are you qualified to instruct?
@@ -186,7 +186,7 @@ const Classes = () => {
                  />
             </label>
 
-        </Form>
+        </form>
     )
 
 }

@@ -68,29 +68,14 @@ const UserCreate = () => {
           setErrors({...errors, [name]: err.errors[0]})
         })
       setUserValues({...userValues, [name]: value})
-      }      
-  
-      const onCheckboxChange = (e) => {
-        const {name, checked} = e.target;
-    
-        yup
-          .reach(formSchema, name)
-          .validate(checked)
-          .then(() => {
-            setErrors({...errors,[name]: ''})
-          })
-          .catch((err) => {
-            setErrors({...errors,[name]:err.errors[0]})
-          })
-  
-        setUserValues({...userValues,[name]:checked})
       }
   
       const onSubmit = (e) => {
         e.preventDefault()
     
         const newUser = {
-            username: userValues.username.trim(),
+            userfname: userValues.userfname.trim(),
+            userlname: userValues.userlname.trim(),
             useremail: userValues.useremail.trim(),
             userpswd1: userValues.userpswd1.trim(),
         }
@@ -106,7 +91,7 @@ const UserCreate = () => {
 
     return (
 
-        <Log>
+        <form onSubmit={onSubmit}>
 
             <h1>Welcome to Anywhere Fitness!</h1>
             <p>Please fill out the form below to join.</p>
@@ -168,7 +153,7 @@ const UserCreate = () => {
                  />
             <button>Submit Form</button>
             <p>Already a member?<button>Login</button></p>
-        </Log>
+        </form>
 
     )
 
