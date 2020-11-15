@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import * as yup from 'yup';
 
 const initialUserValues = {
@@ -151,8 +152,17 @@ const UserCreate = () => {
                 placeholder='******'
                 minLength='6'
                  />
+
+            <Link to='/members'>
             <button>Submit Form</button>
-            <p>Already a member?<button>Login</button></p>
+            </Link>
+
+            <p>Already a member?
+            <Link to='/login'>
+            <button>Login</button>
+            </Link>
+            </p>
+            
         </form>
 
     )

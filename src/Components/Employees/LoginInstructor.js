@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Link, Switch, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 const LoginInstructor = () => {
@@ -38,19 +38,16 @@ const LoginInstructor = () => {
                     name='instpswd'
                  />
             </label>
-            <Switch>
-                <Route to='/members'>
+            
+                <Link to='/classes'>
                 <button>Login</button>
-                </Route>
-            </Switch>
+                </Link>
 
-            <Switch>
-                <Route to='/createaccount'>
-                <p>Do you need to register as an instructor?<button>Create Account</button></p>
-                </Route>
-            </Switch>
-            
-            
+                <p>Do you need to register as an instructor?
+                <Link to='/instructor'>
+                <button>Create Account</button>
+                </Link>
+                </p>            
             
         </form>
     )

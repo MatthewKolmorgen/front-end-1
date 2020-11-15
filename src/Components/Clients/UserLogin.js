@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const initialLogin = {
 
@@ -43,8 +44,16 @@ const UserLogin = () => {
                     onChange={onInputChange}
                      />
             </label>
+
+            <Link to='/members'>
             <button>Login</button>
-            <p>Not a member?<button>Create an account</button></p>
+            </Link>
+
+            <p>Not a member?
+            <Link to='/createaccount'>
+            <button>Create an account</button>
+            </Link>
+            </p>
                 
         </form>
         

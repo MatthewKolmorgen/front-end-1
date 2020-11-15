@@ -162,8 +162,15 @@ const CreateInstructor = () => {
                 minLength='6'
                  />
 
+            <Link to='/classes'>
             <button>Submit Form</button>
-            <p>Already a registered instructor?<button>Login</button></p>
+            </Link>
+
+            <p>Already a registered instructor?
+            <Link to='/instructorlogin'>
+            <button>Login</button>
+            </Link>
+            </p>
 
         </form>
 
