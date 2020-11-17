@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
+import { Link } from 'react-router-dom';
 
 const formSchema = yup.object().shape({
 
@@ -12,9 +13,9 @@ const formSchema = yup.object().shape({
 
     instpswd1: yup.string().min(6, 'Passwords must be at least 6 chatracters long.').required("Please enter a password."),
 
-    instpswd2: yup.string().required('Re-enter password.').test('passwords-match', 'Passwords must match.', function(value) {
-        return this.parent.password === value.instpswd1;
-      }),
+    // instpswd2: yup.string().required('Re-enter password.').test('passwords-match', 'Passwords must match.', function(value) {
+    //     return this.parent.password === value.instpswd1;
+    //   }),
 
 });
 
@@ -22,7 +23,7 @@ const initialInstValues = {
 
     instfname: '',
     instlname: '',
-    instAuth: '',
+    // instAuth: '',
     instemail: '',
     instpswd1: '',
 }
@@ -76,7 +77,7 @@ const CreateInstructor = () => {
         const newInst = {
             instfname: instValues.instfname.trim(),
             instlname: instValues.instlname.trim(),
-            instAuth: instValues.instAuth.trim(),
+            // instAuth: instValues.instAuth.trim(),
             instemail: instValues.instemail.trim(),
             instpswd1: instValues.instpswd1.trim(),
         }
@@ -104,7 +105,7 @@ const CreateInstructor = () => {
                     id='instfname' 
                     name='instfname' 
                     type='text' 
-                    value={value.instfname} 
+                    value={instructor.instfname} 
                     onChange={onInputChange}
                  />
             </label>
@@ -114,20 +115,20 @@ const CreateInstructor = () => {
                     id='instlname' 
                     name='instlname' 
                     type='text' 
-                    value={value.instlname} 
+                    value={instructor.instlname} 
                     onChange={onInputChange}
                  />
             </label>
-            <label htmlFor='instAuth'>
+            {/* <label htmlFor='instAuth'>
                 Please enter the authorization code provided to you by administration:
                 <input
                     id='instAuth' 
                     name='instAuth' 
                     type='text' 
-                    value={value.instAuth}
+                    value={instructor.instAuth}
                     onChange={onInputChange} 
                 />
-            </label>
+            </label> */}
             <label htmlFor='instemail'>
                 E-mail:
             </label>
@@ -136,8 +137,8 @@ const CreateInstructor = () => {
                 name='instemail'
                 type='email'
                 placeholder='Please enter your e-mail address.'
-                value={values.instemail}
-                onChange={onChangeInput}
+                value={instructor.instemail}
+                onChange={onInputChange}
                  />
             <label htmlFor='instpswd1'>
                 Password:
@@ -148,10 +149,10 @@ const CreateInstructor = () => {
                 type='password'
                 placeholder='******'
                 minLength='6'
-                value={values.instpswd1}
+                value={instructor.instpswd1}
                 onChange={onInputChange}
                  />
-            <label htmlFor='instpswd2'>
+            {/* <label htmlFor='instpswd2'>
                 Confirm Password:
             </label>
             <input
@@ -160,7 +161,7 @@ const CreateInstructor = () => {
                 type='password'
                 placeholder='******'
                 minLength='6'
-                 />
+                 /> */}
 
             <Link to='/classes'>
             <button>Submit Form</button>

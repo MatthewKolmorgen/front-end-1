@@ -4,21 +4,21 @@ import axios from 'axios';
 
 const LoginInstructor = () => {
 
-    const getInst = () => {
+    // const getInst = () => {
 
-        axios.get('https://reqres.in/api/instructor')
+    //     axios.get('https://reqres.in/api/instructor')
         
-        .then((info) => {
-            getInst(info.data);
+    //     .then((info) => {
+    //         getInst(info.data);
             
-        })
+    //     })
 
-        .catch((err) => {
+    //     .catch((err) => {
 
-            alert('Login error. Please try again.', err)
-        })
+    //         alert('Login error. Please try again.', err)
+    //     })
 
-    }
+    // }
 
     return (
 

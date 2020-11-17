@@ -6,9 +6,9 @@ const formSchema = yup.object().shape({
 
     activity: yup.string().required("Please enter the name of the activity for this class."),
   
-    time: yup.string().required("Please enter the date and time for the activity."),
+    // time: yup.string().required("Please enter the date and time for the activity."),
   
-    duration: yup.string().required("Please make sure the time is in minutes."),
+    // duration: yup.number().required("Please make sure the time is in minutes."),
   
     intensity: yup.string().required("Please enter the level of intensity."),
   
@@ -16,15 +16,15 @@ const formSchema = yup.object().shape({
 
     NoU: yup.string().required("Please enter a password."),
 
-    maxSize: yup.string().required("The maximum size of your class."),
+    maxSize: yup.number().required("The maximum size of your class."),
       
   });
 
 const initialClassValues = {
 
     activity: '',
-    time: '',
-    duration: '',
+    // time: '',
+    // duration: '',
     intensity: '',
     loc: '',
     NoU: '',
@@ -70,7 +70,7 @@ const Classes = () => {
         .catch((err) => {
           setErrors({...errors, [name]: err.errors[0]})
         })
-      setInstValues({...classValues, [name]: value})
+      setClassValues({...classValues, [name]: value})
       }      
   
       const onCheckboxChange = (e) => {
@@ -86,20 +86,20 @@ const Classes = () => {
             setErrors({...errors,[name]:err.errors[0]})
           })
   
-          setInstValues({...classValues,[name]:checked})
+          setClassValues({...classValues,[name]:checked})
       }
 
     const onSubmit = (e) => {
         e.preventDefault()
 
         const newClass = {
-            activity: instValues.activity.trim(),
-            time: instValues.time.trim(),
-            duration: instValues.duration.trim(),
-            intensity: instValues.intensity.trim(),
-            loc: instValues.loc.trim(),
-            NoU: instValues.NoU.trim(),
-            maxSize: instValues.maxSize.trim(),
+            activity: classValues.activity.trim(),
+            // time: classValues.time,
+            // duration: classValues.duration,
+            intensity: classValues.intensity.trim(),
+            loc: classValues.loc.trim(),
+            NoU: classValues.NoU.trim(),
+            maxSize: classValues.maxSize.trim(),
         }
 
         postClass(newClass);
@@ -122,37 +122,37 @@ const Classes = () => {
                     id='activity' 
                     name='activity' 
                     type='text' 
-                    value={value.activity} 
+                    value={classes.activity} 
                     onChange={onInputChange}
                  />
             </label>
-            <label htmlFor='time'>
+            {/* <label htmlFor='time'>
                 Please select the time for this class.
                 <input 
                     id='time' 
                     name='time' 
                     type='datetime-local' 
-                    value={value.time} 
+                    value={classes.time} 
                     onChange={onInputChange}
                  />
-            </label>
-            <label htmlFor='duration'>
+            </label> */}
+            {/* <label htmlFor='duration'>
                 How long will your instruction last for? (minutes)
                 <input 
                     id='duration' 
                     name='duration' 
                     type='number' 
-                    value={value.duration} 
+                    value={classes.duration} 
                     onChange={onInputChange}
                  />
-            </label>
+            </label> */}
             <label htmlFor='intensity'>
                 Please evaluate the level of intensity for these activities.
                 <input 
                     id='intensity' 
                     name='intensity' 
                     type='text' 
-                    value={value.intensity} 
+                    value={classes.intensity} 
                     onChange={onInputChange}
                  />
             </label>
@@ -162,7 +162,7 @@ const Classes = () => {
                     id='loc' 
                     name='loc' 
                     type='text' 
-                    value={value.loc} 
+                    value={classes.loc} 
                     onChange={onInputChange}
                  />
             </label>
@@ -171,7 +171,7 @@ const Classes = () => {
                     id='NoU' 
                     name='NoU' 
                     type='text' 
-                    value={value.NoU} 
+                    value={classes.NoU} 
                     onChange={onInputChange}
                  />
             </label>
@@ -181,10 +181,11 @@ const Classes = () => {
                     id='maxSize' 
                     name='maxSize' 
                     type='text' 
-                    value={value.maxSize} 
+                    value={classes.maxSize} 
                     onChange={onInputChange}
                  />
             </label>
+            <button>Submit Entry</button>
 
         </form>
     )

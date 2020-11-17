@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import MainContent from './Components/MainContent';
 import UserLogin from './Components/Clients/UserLogin';
 import UserCreate from './Components/Clients/UserCreate';
@@ -12,17 +12,28 @@ function App() {
 
   return (
     <div className="App">
+      <BrowserRouter>
       
-      <Route path='/' component={MainContent} />
-      <Route path='/login' component={UserLogin} />
-      <Route path='/createaccount' component={UserCreate} />
-      <Route path='/members' component={Members} />
-      <Route path='/instructorlogin' component={LoginInstructor} />
-      <Route path='/instructor' component={CreateInstructor} />
-      <Route path='/classes' component={Classes} />
+      <Route exact path='/' component={MainContent}>
+        <MainContent />
+      </Route>
 
+      <Switch>
+        <Route exact path='/login' component={UserLogin}>
+          <UserLogin />
+        </Route>
+        <Route exact path='/createaccount' component={UserCreate} />
+        <Route exact path='/members' component={Members} />
+        <Route exact path='/instructorlogin' component={LoginInstructor} />
+        <Route exact path='/instructor' component={CreateInstructor} />
+        <Route exact path='/classes' component={Classes} />
+      </Switch>
+
+      </BrowserRouter>
     </div>
+
   );
+
 }
 
 export default App

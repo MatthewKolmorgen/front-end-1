@@ -9,6 +9,7 @@ const initialUserValues = {
     userlname: '',
     useremail: '',
     userpswd1: '',
+    // userpswd2: '',
 
 }
 
@@ -25,9 +26,9 @@ const formSchema = yup.object().shape({
 
   userpswd1: yup.string().min(6, 'Passwords must be at least 6 chatracters long.').required("Please enter a password."),
 
-  userpswd2: yup.string().required('Re-enter password.').test('passwords-match', 'Passwords must match.', function(value) {
-      return this.parent.password === value.userpswd1;
-    }),
+//   userpswd2: yup.string().required('Re-enter password.').test('passwords-match', 'Passwords must match.', function(user) {
+//       return user.userpswd2 === user.userpswd1;
+//     }),
 
 });
 
@@ -51,7 +52,7 @@ const UserCreate = () => {
         })
 
         .finally(() => {
-            setInstValues(initialUserValues)
+            setUserValues(initialUserValues)
         })
     
     }
@@ -105,18 +106,18 @@ const UserCreate = () => {
                 name='userfname'
                 type='text'
                 placeholder='Please enter your first name.'
-                value={values.userfname}
+                value={user.userfname}
                 onChange={onInputChange}
                  />
-            <label htmlFor='userlName'>
+            <label htmlFor='userlname'>
                 Last Name:
             </label>
             <input
-                id='userlName'
-                name='userlName'
+                id='userlname'
+                name='userlname'
                 type='text'
                 placeholder='Please enter your last name.'
-                value={values.userlname}
+                value={user.userlname}
                 onChange={onInputChange}
                  />
             <label htmlFor='useremail'>
@@ -127,8 +128,8 @@ const UserCreate = () => {
                 name='useremail'
                 type='email'
                 placeholder='Please enter your e-mail address.'
-                value={values.useremail}
-                onChange={onChangeInput}
+                value={user.useremail}
+                onChange={onInputChange}
                  />
             <label htmlFor='userpswd1'>
                 Password:
@@ -139,10 +140,10 @@ const UserCreate = () => {
                 type='password'
                 placeholder='******'
                 minLength='6'
-                value={values.userpswd1}
+                value={user.userpswd1}
                 onChange={onInputChange}
                  />
-            <label htmlFor='userpswd2'>
+            {/* <label htmlFor='userpswd2'>
                 Confirm Password:
             </label>
             <input
@@ -151,7 +152,8 @@ const UserCreate = () => {
                 type='password'
                 placeholder='******'
                 minLength='6'
-                 />
+                value={user.userpswd2}
+                 /> */}
 
             <Link to='/members'>
             <button>Submit Form</button>

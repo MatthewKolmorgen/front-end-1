@@ -1,26 +1,26 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const initialLogin = {
+// const initialLogin = {
 
-    useremail = '',
-    userpswd1 = ''
-}
+//     useremail: '',
+//     userpswd1: ''
+// }
 
 const UserLogin = () => {
 
-    const [useremail, userpswd1] = props;
+    // const [useremail, userpswd1] = props;
 
-    axios.get('https://reqres.in/api/user')
+    // axios.get('https://reqres.in/api/user')
 
-        .then((res) => {
-            (res.data)
-        })
+    //     .then((res) => {
+    //         (res.data)
+    //     })
 
-        .catch((err) => {
-            alert('Something went wrong.', err)
-        })
+    //     .catch((err) => {
+    //         alert('Something went wrong.', err)
+    //     })
 
     return (
 
@@ -31,8 +31,8 @@ const UserLogin = () => {
                     id='useremail'
                     name='useremail'
                     type='email'
-                    value={props.useremail}
-                    onChange={onInputChange}
+                    // value={value.useremail}
+                    // onChange={onInputChange}
                      />                
             </label>
             <label htmlFor='userpswd1'>
@@ -40,8 +40,8 @@ const UserLogin = () => {
                     id='userpswd1'
                     name='userpswd1'
                     type='password'
-                    value={props.userpswd1}
-                    onChange={onInputChange}
+                    // value={value .userpswd1}
+                    // onChange={onInputChange}
                      />
             </label>
 
