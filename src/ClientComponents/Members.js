@@ -1,15 +1,11 @@
 import React from 'react';
-import UserCreate from '../Components/UserCreate';
-import UserLogin from '../Components/UserLogin';
 
 const Members = () => {
-
     return (
-
         <div>
-            
+            <h1>Today's Classes</h1> 
         </div>
     )
-}
+};
 
 export default Members
