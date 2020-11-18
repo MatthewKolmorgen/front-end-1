@@ -1,6 +1,6 @@
 import React from 'react';
-import UserCreate from './UserCreate';
-import UserLogin from './UserLogin';
+import UserCreate from '../Components/UserCreate';
+import UserLogin from '../Components/UserLogin';
 
 const Members = () => {
 
