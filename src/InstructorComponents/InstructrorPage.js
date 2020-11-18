@@ -1,11 +1,15 @@
 import React from 'react';
-import Classes from './Classes.js'
+import CreateClass from './Classes.js'
+import EditClasses from './EditClass.js'
+
 
 const InstructorClasses = () => {
     return (
         <div>
             <h1>Create Classes</h1>
-            <Classes />
+            <CreateClass />
+            {/* <h2>Edit Classes</h2>
+            <EditClasses /> */}
         </div>
     )
 }
