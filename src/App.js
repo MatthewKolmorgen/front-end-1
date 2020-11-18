@@ -2,12 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import MainContent from './Components/MainContent';
-import UserLogin from './Components/Clients/UserLogin';
-import UserCreate from './Components/Clients/UserCreate';
-import Members from './Components/Clients/Members';
-import LoginInstructor from './Components/Employees/LoginInstructor';
-import CreateInstructor from './Components/Employees/CreateInstructor';
-import InstructorClasses from './Components/Employees/InstructrorPage.js';
+
+import UserLogin from './Components/UserLogin';
+import LoginInstructor from './Components/LoginInstructor';
+import UserCreate from './Components/UserCreate';
+import CreateInstructor from './Components/CreateInstructor';
+import Members from './ClientComponents/Members';
+import InstructorClasses from './InstructorComponents/InstructrorPage.js';
 
 function App() {
 
