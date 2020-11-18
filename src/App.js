@@ -13,21 +13,30 @@ function App() {
 
     return (
         <div className="App">
-            <Router>        
+            <Router>
+
+                {/* Home Page */}
+
                 <Route exact path='/' component={MainContent}>
                     <MainContent />
                 </Route>
 
                 <Switch>
+
+                    {/* Login Pages */}
+
                     <Route exact path='/login' component={UserLogin}>
                         <UserLogin />
                     </Route>
+                    <Route exact path='/instructorlogin' component={LoginInstructor} />
+                    
+                    {/* Create Pages */}
 
                     <Route exact path='/createaccount' component={UserCreate} />
-                    <Route exact path='/instructorlogin' component={LoginInstructor} />
                     <Route exact path='/instructor' component={CreateInstructor} />
 
                     {/* Main Pages after login */}
+
                     <Route exact path='/members' component={Members} />
                     <Route exact path='/instructorpage' component={InstructorClasses} />
                 </Switch>
