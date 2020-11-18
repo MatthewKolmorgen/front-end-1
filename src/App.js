@@ -7,6 +7,7 @@ import Members from './Components/Clients/Members';
 import LoginInstructor from './Components/Employees/LoginInstructor';
 import CreateInstructor from './Components/Employees/CreateInstructor';
 import Classes from './Components/Employees/Classes';
+import ClassCard from './Components/Employees/ClassCard';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route exact path='/instructorlogin' component={LoginInstructor} />
         <Route exact path='/instructor' component={CreateInstructor} />
         <Route exact path='/classes' component={Classes} />
+        <Route exact path='/classcard' component={ClassCard} />
       </Switch>
 
       </BrowserRouter>
