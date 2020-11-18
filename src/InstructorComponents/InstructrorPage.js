@@ -1,6 +1,6 @@
 import React from 'react';
-import CreateClass from './Classes.js'
-import EditClasses from './EditClass.js'
+import CreateClass from './Classes.js';
+import EditClasses from './EditClass.js';
 
 
 const InstructorClasses = () => {
@@ -12,6 +12,6 @@ const InstructorClasses = () => {
             <EditClasses /> */}
         </div>
     )
-}
+};
 
 export default InstructorClasses
