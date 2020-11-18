@@ -7,6 +7,7 @@ import UserCreate from './Components/Clients/UserCreate';
 import Members from './Components/Clients/Members';
 import LoginInstructor from './Components/Employees/LoginInstructor';
 import CreateInstructor from './Components/Employees/CreateInstructor';
+
 // import Classes from './Components/Employees/Classes';
 import InstructorClasses from './Components/Employees/InstructrorPage.js';
 
@@ -34,9 +35,10 @@ return (
                 <Route exact path='/instructorpage' component={InstructorClasses} />
             </Switch>
         </Router>
+
     </div>
 
-    );
+  );
 
 }
 

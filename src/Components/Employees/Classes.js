@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import * as yup from 'yup';
 
 const formSchema = yup.object().shape({
@@ -185,7 +186,9 @@ const Classes = () => {
                     onChange={onInputChange}
                  />
             </label>
-            <button>Submit Entry</button>
+            <Link to='/classcard'>
+                <button>Submit Entry</button>
+            </Link>
 
         </form>
     )
