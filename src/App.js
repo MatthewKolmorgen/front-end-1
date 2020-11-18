@@ -29,6 +29,7 @@ function App() {
                     <Route exact path='/login' component={UserLogin}>
                         <UserLogin />
                     </Route>
+                    
                     <Route exact path='/instructorlogin' component={LoginInstructor} />
                     
                     {/* Create Pages */}

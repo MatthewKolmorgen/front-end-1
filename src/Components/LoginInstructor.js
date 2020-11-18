@@ -39,7 +39,7 @@ const LoginInstructor = () => {
                  />
             </label>
             
-                <Link to='/classes'>
+                <Link to='/instructorpage'>
                 <button>Login</button>
                 </Link>
 
