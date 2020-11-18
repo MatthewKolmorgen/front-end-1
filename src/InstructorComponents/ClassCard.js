@@ -1,5 +1,7 @@
 import React from 'react';
 
+// Funtioning but needs to pull from Backend to work as intended.
+
 function ClassCard(props) {
 
     return (

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as yup from 'yup'
 import axiosWithAuth from 'axios'
 
+// need to pass backend URL to finish .post in axios call
 
 const formSchema = yup.object().shape({
     classname: yup.string()
