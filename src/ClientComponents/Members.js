@@ -5,7 +5,7 @@ const Members = () => {
     return (
         <div>
             <h1>Today's Classes</h1> 
-            {/* <ClassCard /> */}
+            {/* <ClassCard /> Need Backend Data to finish */}
         </div>
     )
 };
