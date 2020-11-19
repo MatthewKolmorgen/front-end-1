@@ -67,8 +67,7 @@ export default function SampleClasses() {
                     <div>
                         <h3>{sampleClass.name}</h3>
                         <p>Intensity: {sampleClass.intensity}</p>
-                        <button>Edit</button>
-                        <button>Delete</button>
+                        <button onClick={()=> history.push('/signup')}>Get Started</button>
                     </div>
                     </>
                    ): 
@@ -76,8 +75,7 @@ export default function SampleClasses() {
                     <div>
                         <h3>{sampleClass.name}</h3>
                         <p>Intensity: {sampleClass.intensity}</p>
-                        <button>Edit</button>
-                        <button>Delete</button>
+                        <button onClick={()=> history.push('/signup')}>Get Started</button>
                     </div>
                     </>)
                 }

@@ -1,6 +1,6 @@
 import React from 'react';
 // import ClassCard from '../InstructorComponents/ClassCard.js';
-import SampleClasses from '../InstructorComponents/classData.js'
+import SampleClasses from './Class-Data.js'
 
 const Members = () => {
     return (
