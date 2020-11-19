@@ -1,6 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 // import axios from 'axios';
 import { Link } from 'react-router-dom';
+
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    height: 50vh;
+    justify-content: ;
+    `;
 
 // const initialLogin = {
 
@@ -24,9 +33,11 @@ const UserLogin = () => {
 
     return (
 
-        <form>
-
-            <label htmlFor='useremail'>
+        <Form>
+            <p>Welcome Anywhere Fitness Member.</p>
+                <p>Please login.
+            </p>
+            <label htmlFor='useremail'>Login: 
                 <input
                     id='useremail'
                     name='useremail'
@@ -35,7 +46,7 @@ const UserLogin = () => {
                     // onChange={onInputChange}
                      />                
             </label>
-            <label htmlFor='userpswd1'>
+            <label htmlFor='userpswd1'>Password: 
                 <input
                     id='userpswd1'
                     name='userpswd1'
@@ -49,13 +60,12 @@ const UserLogin = () => {
             <button>Login</button>
             </Link>
 
-            <p>Not a member?
+            <p>Not a member?</p>
             <Link to='/createaccount'>
             <button>Create an account</button>
             </Link>
-            </p>
                 
-        </form>
+        </Form>
         
     )
 }

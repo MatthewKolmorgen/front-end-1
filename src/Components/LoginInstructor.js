@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, Switch, Redirect } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 
 const LoginInstructor = () => {
 
