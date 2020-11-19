@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import MainContent from './Components/MainContent';
+// import styled from 'styled-components';
+// import MainContent from './Components/MainContent';
 import UserLogin from './Components/Clients/UserLogin';
 import UserCreate from './Components/Clients/UserCreate';
 import Members from './Components/Clients/Members';
@@ -15,8 +16,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
       
-      <Route exact path='/' component={MainContent}>
-        <MainContent />
+      <Route exact path='/' component={() => {window.location.href = "../public/index.html";
+          return null;
+      }}>
       </Route>
 
       <Switch>
