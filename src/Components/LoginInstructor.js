@@ -23,7 +23,6 @@ const LoginInstructor = () => {
     return (
 
         <form>
-
             <label>
                 E-mail address
                 <input 
@@ -39,16 +38,15 @@ const LoginInstructor = () => {
                  />
             </label>
             
-                <Link to='/classes'>
-                <button>Login</button>
+                <Link to='/instructorpage'>
+                    <button>Login</button>
                 </Link>
 
                 <p>Do you need to register as an instructor?
-                <Link to='/instructor'>
-                <button>Create Account</button>
-                </Link>
-                </p>            
-            
+                    <Link to='/instructor'>
+                        <button>Create Account</button>
+                    </Link>
+                </p>                   
         </form>
     )
 }
