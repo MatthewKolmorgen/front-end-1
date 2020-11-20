@@ -163,7 +163,7 @@ const CreateInstructor = () => {
                 minLength='6'
                  /> */}
 
-            <Link to='/classes'>
+            <Link to='/instructorpage'>
             <button>Submit Form</button>
             </Link>
 
