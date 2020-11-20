@@ -1,5 +1,6 @@
 import React from 'react';
 // import ClassCard from '../InstructorComponents/ClassCard.js';
+import SampleClasses from './Class-Data.js'
 import styled from 'styled-components';
 
 const Div = styled.div`
@@ -17,7 +18,9 @@ const Members = () => {
         <Div>
             <h1>Today's Classes</h1> 
             {/* <ClassCard /> Need Backend Data to finish */}
+            <SampleClasses />
         </Div>
+      
     )
 };
 
