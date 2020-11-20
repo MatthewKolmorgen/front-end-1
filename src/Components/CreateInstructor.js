@@ -2,6 +2,20 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    padding: 0 5% 0;
+    height: 50vh;
+    justify-content: space-evenly;
+    background: #242943;
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1.65;
+    width: 40%;
+    `;
 
 const formSchema = yup.object().shape({
 
@@ -94,9 +108,8 @@ const CreateInstructor = () => {
 
     return (
 
-        <form onSubmit={onSubmit}>
+        <Form onSubmit={onSubmit}>
 
-            <h1>Welcome to Anywhere Fitness!</h1>
             <p>Please fill out the form below to register as a new instructor</p>
 
             <label htmlFor='instfname'>
@@ -173,7 +186,7 @@ const CreateInstructor = () => {
             </Link>
             </p>
 
-        </form>
+        </Form>
 
 
     )

@@ -2,6 +2,20 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import * as yup from 'yup';
+import styled from 'styled-components';
+
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    padding: 0 5% 0;
+    height: 60vh;
+    justify-content: space-evenly;
+    background: #242943;
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1.65;
+    width: 50%;
+    `;
 
 const initialUserValues = {
 
@@ -93,9 +107,8 @@ const UserCreate = () => {
 
     return (
 
-        <form onSubmit={onSubmit}>
+        <Form onSubmit={onSubmit}>
 
-            <h1>Welcome to Anywhere Fitness!</h1>
             <p>Please fill out the form below to join.</p>
 
             <label htmlFor='userfname'>
@@ -165,7 +178,7 @@ const UserCreate = () => {
             </Link>
             </p>
             
-        </form>
+        </Form>
 
     )
 
