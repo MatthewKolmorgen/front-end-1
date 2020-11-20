@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const Form = styled.form`
     display: flex;
     flex-direction: column;
-    padding: 10%;
+    padding: 0 5% 0;
     height: 60vh;
     justify-content: space-evenly;
     background: #242943;
@@ -109,7 +109,6 @@ const UserCreate = () => {
 
         <Form onSubmit={onSubmit}>
 
-            <h1>Welcome to Anywhere Fitness!</h1>
             <p>Please fill out the form below to join.</p>
 
             <label htmlFor='userfname'>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Form = styled.form`
     display: flex;
     flex-direction: column;
-    padding: 10%;
+    padding: 0 5% 0;
     height: 50vh;
     justify-content: space-evenly;
     background: #242943;
@@ -38,8 +38,7 @@ const UserLogin = () => {
     return (
 
         <Form>
-            <p>Welcome Anywhere Fitness Member.</p>
-                <p>Please login.
+            <p>Please login.
             </p>
             <label htmlFor='useremail'>Login: 
                 <input

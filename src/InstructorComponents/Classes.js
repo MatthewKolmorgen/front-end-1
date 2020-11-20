@@ -1,6 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup'
 import axiosWithAuth from 'axios'
+import styled from 'styled-components';
+
+const Div = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 0 5% 0;
+    height: 50vh;
+    justify-content: space-evenly;
+    background: #242943;
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1.65;
+    `;
 
 // need to pass backend URL to finish .post in axios call
 
@@ -91,7 +104,7 @@ const CreateClass = (props) => {
     return (
         <div>
             <form >
-                <div>
+                <Div>
                     <div>
                         <h2>Create Class</h2>
                     </div>
@@ -217,7 +230,7 @@ const CreateClass = (props) => {
                             />
                             {errorState.maxsize ? <p>{errorState.maxsize}</p> : null}
                     </label>
-                </div>
+                </Div>
                 <button  disabled={isDisabled} onClick={savePost}>Submit</button>
             </form>
         </div>

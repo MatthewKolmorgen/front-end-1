@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Div = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 10%;
+    padding: 0 5% 0;
     background: #242943;
     color: #ffffff;
     font-weight: 300;

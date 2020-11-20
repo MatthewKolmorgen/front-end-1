@@ -3,11 +3,10 @@ import CreateClass from './Classes.js';
 // import EditClasses from './EditClass.js';
 import styled from 'styled-components';
 
-const Form = styled.form`
+const Div = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 10%;
-    height: 50vh;
+    padding: 0 5% 0;
     justify-content: space-evenly;
     background: #242943;
     color: #ffffff;
@@ -20,12 +19,12 @@ const Form = styled.form`
 
 const InstructorClasses = () => {
     return (
-        <div>
+        <Div>
             <h1>Create Classes</h1>
             <CreateClass />
             {/* <h2>Edit Classes</h2>
             <EditClasses /> */}
-        </div>
+        </Div>
     )
 };
 

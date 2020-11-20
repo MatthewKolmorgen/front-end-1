@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const Form = styled.form`
     display: flex;
     flex-direction: column;
-    padding: 10%;
+    padding: 0 5% 0;
     height: 50vh;
     justify-content: space-evenly;
     background: #242943;
@@ -37,9 +37,8 @@ const LoginInstructor = () => {
 
         <Form>
 
-            <h1>Welcome Anywhere Fitness Instructor.</h1>
-            <p>Please login.
-            </p>
+            <p>Please login.</p>
+            <p>If you are not an instructor, please click <Link to='login'>here</Link></p>
             <label>
                 E-mail address
                 <input 

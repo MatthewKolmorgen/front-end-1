@@ -1,4 +1,17 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
+
+const Div = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 0 5% 0;
+    height: 50vh;
+    justify-content: space-evenly;
+    background: #242943;
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1.65;
+    `;
 
 // Need Data from backend to complete
 
