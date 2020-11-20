@@ -9,11 +9,20 @@ import UserCreate from './Components/UserCreate';
 import CreateInstructor from './Components/CreateInstructor';
 import Members from './ClientComponents/Members';
 import InstructorClasses from './InstructorComponents/InstructrorPage.js';
+import styled from 'styled-components';
+
+const Div = styled.div`
+    background: #242943;
+    padding: 5%;
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1.65;
+`;
 
 function App() {
 
     return (
-        <div className="App">
+        <Div className="App">
             <Router>
 
                 {/* Home Page */}
@@ -43,7 +52,7 @@ function App() {
                     <Route exact path='/instructorpage' component={InstructorClasses} />
                 </Switch>
             </Router>
-        </div>
+        </Div>
 
     );
 }

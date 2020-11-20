@@ -8,7 +8,11 @@ const Form = styled.form`
     flex-direction: column;
     padding: 10%;
     height: 50vh;
-    justify-content: ;
+    justify-content: space-evenly;
+    background: #242943;
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1.65;
     `;
 
 // const initialLogin = {

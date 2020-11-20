@@ -1,6 +1,19 @@
 import React, { useEffect } from 'react';
 import { Link, Switch, Redirect } from 'react-router-dom';
 // import axios from 'axios';
+import styled from 'styled-components';
+
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    height: 50vh;
+    justify-content: space-evenly;
+    background: #242943;
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1.65;
+    `;
 
 const LoginInstructor = () => {
 
@@ -22,7 +35,11 @@ const LoginInstructor = () => {
 
     return (
 
-        <form>
+        <Form>
+
+            <h1>Welcome Anywhere Fitness Instructor.</h1>
+            <p>Please login.
+            </p>
             <label>
                 E-mail address
                 <input 
@@ -43,11 +60,12 @@ const LoginInstructor = () => {
                 </Link>
 
                 <p>Do you need to register as an instructor?
+                </p>
                     <Link to='/instructor'>
                         <button>Create Account</button>
                     </Link>
-                </p>                   
-        </form>
+                                   
+        </Form>
     )
 }
 
